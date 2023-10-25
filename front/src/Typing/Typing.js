@@ -1,4 +1,5 @@
 import React from "react";
+import "./Typing.css";
 
 //JavaScriptのコードはここに記入
 

@@ -1,4 +1,5 @@
 import React from "react";
+import "./Breakout.css";
 
 //JavaScriptのコードはここに記入
 
