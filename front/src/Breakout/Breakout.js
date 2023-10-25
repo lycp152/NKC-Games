@@ -1,13 +1,9 @@
 import React from "react";
 
-//JavaScriptのコード
+//JavaScriptのコードはここに記入
 
-const App = () => {
-  return (
-    <div>
-      <h1>ブロック崩し</h1>
-    </div>
-  );
+const Breakout = () => {
+  return <h1>ブロック崩し</h1>;
 };
 
-export default App;
+export default Breakout;
