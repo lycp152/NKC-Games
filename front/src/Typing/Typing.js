@@ -1,5 +1,7 @@
 import React from "react";
 
+//JavaScriptのコードはここに記入
+
 const App = () => {
   return (
     <div>
