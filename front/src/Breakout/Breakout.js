@@ -4,7 +4,12 @@ import "./Breakout.css";
 //JavaScriptのコードはここに記入
 
 const Breakout = () => {
-  return <h1>ブロック崩し</h1>;
+  return (
+    <>
+      <h2>ブロック崩し</h2>
+      <p>ここはブロック崩しの画面です。</p>
+    </>
+  );
 };
 
 export default Breakout;

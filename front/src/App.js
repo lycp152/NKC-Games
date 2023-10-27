@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Home from "./Home/Home";
 import Breakout from "./Breakout/Breakout";
 import Typing from "./Typing/Typing";
 
@@ -10,9 +11,13 @@ const App = () => {
   return (
     <Router>
       <>
+        {/*全ページ共通部分*/}
         <h1>サイト名</h1>
         <nav>
           <ul>
+            <li>
+              <Link to="/">ホーム</Link>
+            </li>
             <li>
               <Link to="/breakout">ブロック崩し</Link>
             </li>
@@ -24,6 +29,7 @@ const App = () => {
 
         {/*リンクの設定*/}
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/breakout" element={<Breakout />} />
           <Route path="/typing" element={<Typing />} />
         </Routes>

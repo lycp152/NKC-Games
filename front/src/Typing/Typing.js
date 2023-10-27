@@ -4,7 +4,12 @@ import "./Typing.css";
 //JavaScriptのコードはここに記入
 
 const Typing = () => {
-  return <h1>タイピングゲーム</h1>;
+  return (
+    <>
+      <h2>タイピングゲーム</h2>
+      <p>ここはタイピングゲームの画面です。</p>
+    </>
+  );
 };
 
 export default Typing;
