@@ -10,7 +10,7 @@ import Typing from "./Typing/Typing";
 const App = () => {
   return (
     <Router>
-      <>
+      <div className="main">
         {/*全ページ共通部分*/}
         <h1>サイト名</h1>
         <nav>
@@ -25,6 +25,8 @@ const App = () => {
               <Link to="/typing">タイピングゲーム</Link>
             </li>
           </ul>
+
+          <p>※レイアウト確認のため色付けてます</p>
         </nav>
 
         {/*リンクの設定*/}
@@ -33,7 +35,7 @@ const App = () => {
           <Route path="/breakout" element={<Breakout />} />
           <Route path="/typing" element={<Typing />} />
         </Routes>
-      </>
+      </div>
     </Router>
   );
 };

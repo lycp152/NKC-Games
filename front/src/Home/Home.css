@@ -1,0 +1,25 @@
+.menu img {
+  width: 250px;
+  height: 150px;
+}
+
+.menu p {
+  margin: 0;
+  background-color: yellow;
+}
+
+.layout {
+  max-width: 960px;
+  text-align: center;
+  margin: auto;
+}
+
+.menu {
+  display: flex;
+}
+
+.game {
+  flex: 1;
+  background-color: aquamarine;
+  padding: 30px;
+}
