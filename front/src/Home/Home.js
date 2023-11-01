@@ -9,7 +9,6 @@ const Home = () => {
   return (
     <div className="layout">
       <h2>ホーム</h2>
-      <p>ここはホーム画面です。</p>
 
       <p>サイトの説明</p>
 
@@ -22,16 +21,19 @@ const Home = () => {
               alt="logo"
             ></img>
           </Link>
-          <p>説明</p>
-          <p>　</p>
-          <p>　</p>
+          <p>
+            ブロック崩し <br />
+            難易度：☆☆☆☆☆
+            <br />
+            ブロック崩しです。（仮）
+          </p>
         </div>
 
         <div className="game">
           <Link to="/typing">
             <img src="./images/sample.jpg" className="Typing" alt="logo"></img>
           </Link>
-          <p>説明</p>
+          <p>タイピングゲーム</p>
           <p>　</p>
           <p>　</p>
         </div>

@@ -13,6 +13,7 @@ const App = () => {
       <div className="main">
         {/*全ページ共通部分*/}
         <h1>サイト名</h1>
+
         <nav>
           <ul>
             <li>
@@ -36,6 +37,10 @@ const App = () => {
           <Route path="/typing" element={<Typing />} />
         </Routes>
       </div>
+
+      <footer>
+        <p>フッター</p>
+      </footer>
     </Router>
   );
 };

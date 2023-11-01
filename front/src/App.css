@@ -2,6 +2,37 @@
 .main {
   background-color: antiquewhite;
   max-width: 960px;
-  /*text-align: center;*/
   margin: auto;
 }
+
+/*------------------------------------*/
+/*ナビゲーション*/
+/*------------------------------------*/
+/*
+.main nav {
+  text-align: center;
+}
+
+.main ul {
+  margin: 0;
+  padding: 0;
+}
+
+.main li {
+  list-style: none;
+  display: inline-block;
+  width: 30%;
+}
+
+.main li:not(:last-child) {
+  border-right: 2px solid #ddd;
+}
+
+.main a {
+  text-decoration: none;
+}
+
+.main a:hover {
+  color: red;
+}
+*/
