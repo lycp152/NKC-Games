@@ -16,6 +16,21 @@ const Breakout = () => {
     var paddleX = (canvas.width - paddleWidth) / 2;
     var rightPressed = false;
     var leftPressed = false;
+    var brickRowCount = 3;
+    var brickColumnCount = 5;
+    var brickWidth = 75;
+    var brickHeight = 20;
+    var brickPadding = 10;
+    var brickOffsetTop = 30;
+    var brickOffsetLeft = 30;
+
+    var bricks = [];
+    for (var c = 0; c < brickColumnCount; c++) {
+      bricks[c] = [];
+      for (var r = 0; r < brickRowCount; r++) {
+        bricks[c][r] = { x: 0, y: 0 };
+      }
+    }
 
     document.addEventListener("keydown", keyDownHandler, false);
     document.addEventListener("keyup", keyUpHandler, false);
@@ -55,9 +70,25 @@ const Breakout = () => {
       ctx.fill();
       ctx.closePath();
     }
+    function drawBricks() {
+      for (var c = 0; c < brickColumnCount; c++) {
+        for (var r = 0; r < brickRowCount; r++) {
+          var brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
+          var brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
+          bricks[c][r].x = brickX;
+          bricks[c][r].y = brickY;
+          ctx.beginPath();
+          ctx.rect(brickX, brickY, brickWidth, brickHeight);
+          ctx.fillStyle = "#0095DD";
+          ctx.fill();
+          ctx.closePath();
+        }
+      }
+    }
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawBricks();
       drawBall();
       drawPaddle();
 
@@ -68,33 +99,28 @@ const Breakout = () => {
         dy = -dy;
       } else if (y + dy > canvas.height - ballRadius) {
         if (x > paddleX && x < paddleX + paddleWidth) {
-          dy = -dy;
+          if ((y = y - paddleHeight)) {
+            dy = -dy;
+          }
         } else {
           alert("GAME OVER");
           document.location.reload();
-          clearInterval(interval);
+          clearInterval(interval); // Needed for Chrome to end game
         }
       }
 
-      if (rightPressed) {
+      if (rightPressed && paddleX < canvas.width - paddleWidth) {
         paddleX += 7;
-        if (paddleX + paddleWidth > canvas.width) {
-          paddleX = canvas.width - paddleWidth;
-        }
-      } else if (leftPressed) {
+      } else if (leftPressed && paddleX > 0) {
         paddleX -= 7;
-        if (paddleX < 0) {
-          paddleX = 0;
-        }
       }
 
       x += dx;
       y += dy;
     }
 
-    const interval = setInterval(draw, 10);
+    var interval = setInterval(draw, 10);
   }, []);
-
   return (
     <>
       <h2>ブロック崩し</h2>
