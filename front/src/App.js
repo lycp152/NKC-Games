@@ -12,7 +12,9 @@ const App = () => {
     <Router>
       <div className="main">
         {/*全ページ共通部分*/}
-        <h1>サイト名</h1>
+        <Link to="/">
+          <h1>サイト名</h1>
+        </Link>
 
         <nav>
           <ul>
@@ -36,11 +38,11 @@ const App = () => {
           <Route path="/breakout" element={<Breakout />} />
           <Route path="/typing" element={<Typing />} />
         </Routes>
-      </div>
 
-      <footer>
-        <p>フッター</p>
-      </footer>
+        <footer>
+          <p>&copy;Copyright 2023 NKC All rights reserved.</p>
+        </footer>
+      </div>
     </Router>
   );
 };

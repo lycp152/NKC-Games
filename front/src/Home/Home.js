@@ -5,12 +5,25 @@ import "./Home.css";
 
 //JavaScriptのコードはここに記入
 
+const returnTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
 const Home = () => {
   return (
     <div className="layout">
-      <h2>ホーム</h2>
-
-      <p>サイトの説明</p>
+      <div className="content">
+        <div className="title">
+          <h3>当サイトについて</h3>
+        </div>
+        <p>
+          当サイトは名古屋工学院専門学校
+          情報処理学科の卒業制作によって作成されたブラウザゲームサイトです。
+        </p>
+      </div>
 
       <div className="menu">
         <div className="game">
@@ -21,23 +34,24 @@ const Home = () => {
               alt="logo"
             ></img>
           </Link>
-          <p>
-            ブロック崩し <br />
-            難易度：☆☆☆☆☆
-            <br />
-            ブロック崩しです。（仮）
-          </p>
+          <p className="game-title">ブロック崩し</p>
+          <p>ゲームの説明</p>
         </div>
 
         <div className="game">
           <Link to="/typing">
             <img src="./images/sample.jpg" className="Typing" alt="logo"></img>
           </Link>
-          <p>タイピングゲーム</p>
-          <p>　</p>
-          <p>　</p>
+          <p className="game-title">タイピングゲーム</p>
+          <p>ゲームの説明</p>
         </div>
       </div>
+      <img
+        className="top-button"
+        src="./images/button.png"
+        alt="ロゴ画像"
+        onClick={returnTop}
+      />
     </div>
   );
 };
