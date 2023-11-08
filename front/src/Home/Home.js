@@ -25,13 +25,13 @@ const Home = () => {
         </p>
       </div>
 
-      <div className="menu">
+      <div className="menu" id="game-menu">
         <div className="game">
           <Link to="/breakout">
             <img
               src="./images/sample.jpg"
               className="Breakout"
-              alt="logo"
+              alt="game"
             ></img>
           </Link>
           <p className="game-title">ブロック崩し</p>
@@ -40,7 +40,7 @@ const Home = () => {
 
         <div className="game">
           <Link to="/typing">
-            <img src="./images/sample.jpg" className="Typing" alt="logo"></img>
+            <img src="./images/sample.jpg" className="Typing" alt="game"></img>
           </Link>
           <p className="game-title">タイピングゲーム</p>
           <p>ゲームの説明</p>

@@ -13,8 +13,10 @@ const App = () => {
       <div className="main">
         {/*全ページ共通部分*/}
         <Link to="/">
-          <h1>サイト名</h1>
+          <h1>NKC Games</h1>
         </Link>
+
+        <img src="./images/header-sample.png" className="top-img" alt=""></img>
 
         <nav>
           <ul>
