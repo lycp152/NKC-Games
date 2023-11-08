@@ -16,13 +16,14 @@ const Breakout = () => {
     var paddleX = (canvas.width - paddleWidth) / 2;
     var rightPressed = false;
     var leftPressed = false;
-    var brickRowCount = 3;
-    var brickColumnCount = 5;
+    var brickRowCount = 5;
+    var brickColumnCount = 3;
     var brickWidth = 75;
     var brickHeight = 20;
     var brickPadding = 10;
     var brickOffsetTop = 30;
     var brickOffsetLeft = 30;
+    var score = 0;
 
     var bricks = [];
     for (var c = 0; c < brickColumnCount; c++) {
@@ -63,11 +64,18 @@ const Breakout = () => {
             ) {
               dy = -dy;
               b.status = 0;
+              score++;
+              if (score == brickRowCount * brickColumnCount) {
+                alert("YOU WIN, CONGRATS!");
+                document.location.reload();
+                clearInterval(interval); // Needed for Chrome to end game
+              }
             }
           }
         }
       }
     }
+
     function drawBall() {
       ctx.beginPath();
       ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
@@ -91,8 +99,8 @@ const Breakout = () => {
       for (var c = 0; c < brickColumnCount; c++) {
         for (var r = 0; r < brickRowCount; r++) {
           if (bricks[c][r].status == 1) {
-            var brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
-            var brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
+            var brickX = r * (brickWidth + brickPadding) + brickOffsetLeft;
+            var brickY = c * (brickHeight + brickPadding) + brickOffsetTop;
             bricks[c][r].x = brickX;
             bricks[c][r].y = brickY;
             ctx.beginPath();
@@ -104,12 +112,18 @@ const Breakout = () => {
         }
       }
     }
+    function drawScore() {
+      ctx.font = "16px Arial";
+      ctx.fillStyle = "#0095DD";
+      ctx.fillText("Score: " + score, 8, 20);
+    }
 
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       drawBricks();
       drawBall();
       drawPaddle();
+      drawScore();
       collisionDetection();
 
       if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
@@ -119,9 +133,7 @@ const Breakout = () => {
         dy = -dy;
       } else if (y + dy > canvas.height - ballRadius) {
         if (x > paddleX && x < paddleX + paddleWidth) {
-          if ((y = y - paddleHeight)) {
-            dy = -dy;
-          }
+          dy = -dy;
         } else {
           alert("GAME OVER");
           document.location.reload();
