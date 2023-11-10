@@ -10,52 +10,55 @@ const Typing = () => {
       "banana",
       "melon",
       "mango",
-      "starwberry",
+      "strawberry",
       "blueberry",
       "orange",
-    ]; //問題文
-    let Q_No = Math.floor(Math.random() * Q.length); //問題をランダムで出題する
+    ];
+    let Q_No = Math.floor(Math.random() * Q.length);
 
-    let Q_i = 0; //回答初期値・現在単語どこまで合っているか判定している文字番号
-    let Q_l = Q[Q_No].length; //計算用の文字の長さ
+    let Q_i = 0;
+    let Q_l = Q[Q_No].length;
 
     window.addEventListener("keydown", push_Keydown);
 
     function push_Keydown(event) {
       let keyCode = event.key;
-      if (Q_l === Q_l - Q_i) {
+      document.getElementById("img").src = require("./" + Q[Q_No] + ".png");
+      if (Q_i === 0) {
+        //document.getElementById("img").src = Q[Q_No] + ".png";
+
         document.getElementById("start").innerHTML = Q[Q_No].substring(
           Q_i,
           Q_l
-        ); //問題を書き出す
+        );
+        var speak = new SpeechSynthesisUtterance();
+        speak.text = Q[Q_No];
+        speak.lang = "en-US";
+        speechSynthesis.speak(speak);
       }
 
       if (Q[Q_No].charAt(Q_i) === keyCode) {
-        //押したキーが合っていたら
-
-        Q_i++; //判定する文章に１足す
+        Q_i++;
         document.getElementById("start").innerHTML = Q[Q_No].substring(
           Q_i,
           Q_l
-        ); //問題を書き出す
+        );
 
-        if (Q_l - Q_i === 0) {
-          //全部正解したら
+        if (Q_i === Q_l) {
+          new Audio(okAudio).play();
 
-          console.log("okAudio", okAudio);
-          new Audio(okAudio).play(); // "ok.mp3" オーディオを再生
+          Q_No = Math.floor(Math.random() * Q.length);
+          Q_i = 0;
+          Q_l = Q[Q_No].length;
 
-          Q_No = Math.floor(Math.random() * Q.length); //問題をランダムで出題する
-          Q_i = 0; //回答初期値・現在どこまで合っているか判定している文字番号
-          Q_l = Q[Q_No].length; //計算用の文字の長さ
-
+          // document.getElementById("img").src = Q[Q_No] + ".png";
+          document.getElementById("img").src = require("./" + Q[Q_No] + ".png");
           document.getElementById("start").innerHTML = Q[Q_No].substring(
             Q_i,
             Q_l
-          ); //新たな問題を書き出す
+          );
         } else {
-          console.log("goodAudio", goodAudio);
-          new Audio(goodAudio).play(); // "good.mp3" オーディオを再生
+          new Audio(goodAudio).play();
         }
       }
     }
@@ -64,6 +67,9 @@ const Typing = () => {
   return (
     <>
       <center>
+        <p>
+          <img src="" id="img" alt="" />
+        </p>
         <h1 id="start" className="text">
           何かキーを押して下さい
         </h1>
