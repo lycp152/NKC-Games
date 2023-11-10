@@ -24,7 +24,6 @@ const Home = () => {
           情報処理学科の卒業制作によって作成されたブラウザゲームサイトです。
         </p>
       </div>
-
       <div className="menu" id="game-menu">
         <div className="game">
           <Link to="/breakout">

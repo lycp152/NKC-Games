@@ -1,0 +1,31 @@
+/*[News]のcssを記入*/
+
+.news-list {
+  background-color: aqua;
+  list-style: none outside;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  background-color: lightcoral;
+  display: flex;
+  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  text-decoration: none;
+  width: 80%;
+  margin: auto;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+
+.date {
+  /*background-color: azure;*/
+  color: #999;
+}
+
+.news {
+  /*background-color: blanchedalmond;*/
+  margin: 0;
+  width: 100%;
+}

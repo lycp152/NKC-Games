@@ -4,6 +4,10 @@ import "./App.css";
 import Home from "./Home/Home";
 import Breakout from "./Breakout/Breakout";
 import Typing from "./Typing/Typing";
+import News from "./News/News";
+
+//ページ内リンク用ライブラリ
+import { HashLink } from "react-router-hash-link";
 
 //JavaScriptのコードはここに記入
 
@@ -24,10 +28,12 @@ const App = () => {
               <Link to="/">ホーム</Link>
             </li>
             <li>
-              <Link to="/breakout">ブロック崩し</Link>
+              <HashLink smooth to="/#game-menu">
+                ゲーム
+              </HashLink>
             </li>
             <li>
-              <Link to="/typing">タイピングゲーム</Link>
+              <Link to="/news">お知らせ</Link>
             </li>
           </ul>
 
@@ -39,6 +45,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/breakout" element={<Breakout />} />
           <Route path="/typing" element={<Typing />} />
+          <Route path="/news" element={<News />} />
         </Routes>
 
         <footer>
