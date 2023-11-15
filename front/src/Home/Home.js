@@ -34,7 +34,7 @@ const Home = () => {
             ></img>
           </Link>
           <p className="game-title">ブロック崩し</p>
-          <p>ゲームの説明</p>
+          <p>バーを動かしてブロックを全て壊そう！</p>
         </div>
 
         <div className="game">
@@ -42,7 +42,7 @@ const Home = () => {
             <img src="./images/sample.jpg" className="Typing" alt="game"></img>
           </Link>
           <p className="game-title">タイピングゲーム</p>
-          <p>ゲームの説明</p>
+          <p>表示されたお題を入力しよう！</p>
         </div>
       </div>
       <img

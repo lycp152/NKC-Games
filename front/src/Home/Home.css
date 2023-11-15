@@ -27,7 +27,7 @@
 
 .menu p {
   margin: 0;
-  background-color: yellow;
+  /*background-color: yellow;*/
 }
 
 /*------------------------------------------*/
@@ -35,7 +35,8 @@
 /*------------------------------------------*/
 .game {
   flex: 1;
-  background-color: aquamarine;
+  background-color: aliceblue;
+  margin: 20px 20px 0px 20px;
   padding: 30px;
 }
 
@@ -82,17 +83,19 @@ p.game-title {
 
 .content {
   width: 600px;
-  margin: auto;
+  margin: 3em auto 1em;
   padding-left: 5px;
   padding-right: 5px;
-  background-color: aliceblue;
 }
 
 .content p {
   margin: 0;
-  padding: 0.5em;
+  padding: 0.5em 1em;
   margin: 5px 0px;
   text-align: left;
+  border: 5px solid aliceblue;
+  background-color: aliceblue;
+  border-radius: 20px;
 }
 
 .top-button {
@@ -120,6 +123,6 @@ p.game-title {
   }
   .content {
     width: 450px;
-    margin: auto;
+    margin: 3em auto 0em;
   }
 }

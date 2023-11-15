@@ -1,14 +1,14 @@
 /*[News]のcssを記入*/
 
 .news-list {
-  background-color: aqua;
+  /*background-color: aqua;*/
   list-style: none outside;
   margin: 0;
   padding: 0;
 }
 
-.content {
-  background-color: lightcoral;
+.news-content {
+  /*background-color: lightcyan;*/
   display: flex;
   flex-wrap: wrap;
   flex-wrap: nowrap;
@@ -20,12 +20,10 @@
 }
 
 .date {
-  /*background-color: azure;*/
   color: #999;
+  padding: 0px 5px;
 }
 
 .news {
-  /*background-color: blanchedalmond;*/
-  margin: 0;
-  width: 100%;
+  margin: auto 10px;
 }

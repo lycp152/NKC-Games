@@ -1,5 +1,6 @@
 import React from "react";
 import "./News.css";
+import { Link } from "react-router-dom";
 
 //JavaScriptのコードはここに記入
 
@@ -8,13 +9,25 @@ const News = () => {
     <div>
       <h2>お知らせ</h2>
       <ul className="news-list">
-        <div className="content">
-          <p className="date">20xx.xx.xx</p>
-          <p className="news">お知らせが入りますお知らせが入ります</p>
+        <div className="news-content">
+          <p className="date">2023.xx.xx</p>
+          <p className="news">
+            遊べるゲームに<Link to="/typing">タイピングゲーム</Link>
+            を追加しました。
+          </p>
         </div>
-        <div className="content">
-          <p className="date">20xx.xx.xx</p>
-          <p className="news">お知らせが入りますお知らせが入ります</p>
+        <div className="news-content">
+          <p className="date">2023.xx.xx</p>
+          <p className="news">
+            遊べるゲームに<Link to="/breakout">ブロック崩し</Link>
+            を追加しました。
+          </p>
+        </div>
+        <div className="news-content">
+          <p className="date">2023.xx.xx</p>
+          <p className="news">
+            サイトを開設しました。（<Link to="/">NKC Games</Link>）
+          </p>
         </div>
       </ul>
     </div>

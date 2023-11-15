@@ -6,8 +6,11 @@
 /*------------------------------------------*/
 /*  サイトのCSS*/
 /*------------------------------------------*/
+.body {
+  background-color: aquamarine;
+}
 .main {
-  background-color: antiquewhite;
+  background-color: white;
   max-width: 960px;
   margin: auto;
   font-family: "Zen Maru Gothic", sans-serif;
@@ -67,6 +70,7 @@ h1 {
 /*フッター*/
 /*--------------------------------------------*/
 .main footer {
-  background-color: lightblue;
   text-align: center;
+  margin-top: 1em;
+  border-top: 1.5px solid lightgray;
 }
