@@ -7,7 +7,12 @@ import { Link } from "react-router-dom";
 const News = () => {
   return (
     <div>
-      <h2>お知らせ</h2>
+      <div className="content">
+        <div className="title">
+          <h3>お知らせ</h3>
+        </div>
+      </div>
+
       <ul className="news-list">
         <div className="news-content">
           <p className="date">2023.xx.xx</p>
@@ -29,6 +34,10 @@ const News = () => {
             サイトを開設しました。（<Link to="/">NKC Games</Link>）
           </p>
         </div>
+        <p className="update">
+          [最終更新] 2023.xx.xx
+          <br />
+        </p>
       </ul>
     </div>
   );

@@ -21,11 +21,7 @@ const App = () => {
             <h1>NKC Games</h1>
           </Link>
 
-          <img
-            src="./images/header-sample.png"
-            className="top-img"
-            alt=""
-          ></img>
+          <img src="./images/あお.jpg" className="top-img" alt=""></img>
 
           <nav>
             <ul>

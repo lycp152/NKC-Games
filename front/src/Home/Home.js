@@ -25,7 +25,7 @@ const Home = () => {
         </p>
       </div>
       <div className="menu" id="game-menu">
-        <div className="game">
+        <div className="game-left">
           <Link to="/breakout">
             <img
               src="./images/sample.jpg"
@@ -37,14 +37,15 @@ const Home = () => {
           <p>バーを動かしてブロックを全て壊そう！</p>
         </div>
 
-        <div className="game">
+        <div className="game-right">
           <Link to="/typing">
             <img src="./images/sample.jpg" className="Typing" alt="game"></img>
           </Link>
           <p className="game-title">タイピングゲーム</p>
-          <p>表示されたお題を入力しよう！</p>
+          <p>画面に表示されたお題を素早く入力しよう！</p>
         </div>
       </div>
+
       <img
         className="top-button"
         src="./images/button.png"

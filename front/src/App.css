@@ -7,7 +7,7 @@
 /*  サイトのCSS*/
 /*------------------------------------------*/
 .body {
-  background-color: aquamarine;
+  background-color: aliceblue;
 }
 .main {
   background-color: white;
@@ -35,7 +35,7 @@ h1 {
 }
 
 .main ul {
-  margin: 0;
+  margin: 0 0 40px 0;
   padding: 0;
 }
 
@@ -54,7 +54,7 @@ h1 {
 }
 
 .main a:hover {
-  color: red;
+  color: #00acc1;
 }
 
 /*---------------------------------------------------*/

@@ -4,17 +4,16 @@
   /*background-color: aqua;*/
   list-style: none outside;
   margin: 0;
-  padding: 0;
+  padding: 10px;
 }
 
 .news-content {
-  /*background-color: lightcyan;*/
   display: flex;
   flex-wrap: wrap;
   flex-wrap: nowrap;
   text-decoration: none;
   width: 80%;
-  margin: auto;
+  margin: 0 auto;
   border-top: 1px solid #999;
   border-bottom: 1px solid #999;
 }
@@ -26,4 +25,12 @@
 
 .news {
   margin: auto 10px;
+}
+
+.update {
+  font-size: 14px;
+  text-align: right;
+  color: #999;
+  width: 80%;
+  margin: 0.5px auto 30px auto;
 }
