@@ -19,6 +19,8 @@ const Typing = () => {
       "kiwi",
       "lemon",
       "papaya",
+      "cheery",
+      "watermelon",
     ];
     let Q_No = Math.floor(Math.random() * Q.length);
 
