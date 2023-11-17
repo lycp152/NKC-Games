@@ -11,15 +11,15 @@ const Breakout = () => {
     var y = canvas.height - 30;
     var dx = 2;
     var dy = -2;
-    var paddleHeight = 10;
-    var paddleWidth = 75;
+    var paddleHeight = 30;
+    var paddleWidth = 90;
     var paddleX = (canvas.width - paddleWidth) / 2;
     var rightPressed = false;
     var leftPressed = false;
-    var brickRowCount = 5;
-    var brickColumnCount = 3;
-    var brickWidth = 75;
-    var brickHeight = 20;
+    var brickRowCount = 6;
+    var brickColumnCount = 6;
+    var brickWidth = 80;
+    var brickHeight = 25;
     var brickPadding = 10;
     var brickOffsetTop = 30;
     var brickOffsetLeft = 30;
@@ -39,17 +39,17 @@ const Breakout = () => {
     document.addEventListener("mousemove", mouseMoveHandler, false);
 
     function keyDownHandler(e) {
-      if (e.key == "Right" || e.key == "ArrowRight") {
+      if (e.key === "Right" || e.key === "ArrowRight") {
         rightPressed = true;
-      } else if (e.key == "Left" || e.key == "ArrowLeft") {
+      } else if (e.key === "Left" || e.key === "ArrowLeft") {
         leftPressed = true;
       }
     }
 
     function keyUpHandler(e) {
-      if (e.key == "Right" || e.key == "ArrowRight") {
+      if (e.key === "Right" || e.key === "ArrowRight") {
         rightPressed = false;
-      } else if (e.key == "Left" || e.key == "ArrowLeft") {
+      } else if (e.key === "Left" || e.key === "ArrowLeft") {
         leftPressed = false;
       }
     }
@@ -64,7 +64,7 @@ const Breakout = () => {
       for (var c = 0; c < brickColumnCount; c++) {
         for (var r = 0; r < brickRowCount; r++) {
           var b = bricks[c][r];
-          if (b.status == 1) {
+          if (b.status === 1) {
             if (
               x > b.x &&
               x < b.x + brickWidth &&
@@ -74,7 +74,7 @@ const Breakout = () => {
               dy = -dy;
               b.status = 0;
               score++;
-              if (score == brickRowCount * brickColumnCount) {
+              if (score === brickRowCount * brickColumnCount) {
                 alert("YOU WIN, CONGRATS!");
                 document.location.reload();
               }
@@ -106,14 +106,28 @@ const Breakout = () => {
     function drawBricks() {
       for (var c = 0; c < brickColumnCount; c++) {
         for (var r = 0; r < brickRowCount; r++) {
-          if (bricks[c][r].status == 1) {
+          if (bricks[c][r].status === 1) {
             var brickX = r * (brickWidth + brickPadding) + brickOffsetLeft;
             var brickY = c * (brickHeight + brickPadding) + brickOffsetTop;
             bricks[c][r].x = brickX;
             bricks[c][r].y = brickY;
             ctx.beginPath();
             ctx.rect(brickX, brickY, brickWidth, brickHeight);
-            ctx.fillStyle = "#0095DD";
+            if (c === 0) {
+              ctx.fillStyle = "#0000FF";
+              // 2行目
+            } else if (c === 1) {
+              ctx.fillStyle = "#0066FF";
+              // 3行目
+            } else if (c === 2) {
+              ctx.fillStyle = "#5D99FF";
+              // 4行目
+            } else if (c === 3) {
+              ctx.fillStyle = "#A4C6FF";
+              // 5行目
+            } else if (c === 4) {
+              ctx.fillStyle = "white";
+            }
             ctx.fill();
             ctx.closePath();
           }
@@ -180,7 +194,15 @@ const Breakout = () => {
     <>
       <h2>ブロック崩し</h2>
       <p>ここはブロック崩しの画面です。</p>
-      <canvas id="myCanvas" width="480" height="320"></canvas>
+      <canvas id="myCanvas" width="600" height="500"></canvas>
+
+      <button
+        id="start"
+        onclick="gameButton();startTimer()"
+        class="btn-circle-border-double"
+      >
+        START
+      </button>
     </>
   );
 };

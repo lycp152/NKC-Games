@@ -8,3 +8,20 @@ canvas {
   display: block;
   margin: 0 auto;
 }
+.btn-circle-border-double {
+  display: inline-block;
+  text-decoration: none;
+  color: #000000;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  border: double 4px #000000;
+  text-align: center;
+  overflow: hidden;
+  transition: 0.6s;
+}
+.btn-circle-border-double:hover {
+  -webkit-transform: rotateY(360deg);
+  transform: rotateY(360deg);
+}
