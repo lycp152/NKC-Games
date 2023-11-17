@@ -13,6 +13,12 @@ const Typing = () => {
       "strawberry",
       "blueberry",
       "orange",
+      "grapes",
+      "dragonfruit",
+      "mangosteen",
+      "kiwi",
+      "lemon",
+      "papaya",
     ];
     let Q_No = Math.floor(Math.random() * Q.length);
 
@@ -24,17 +30,17 @@ const Typing = () => {
     function push_Keydown(event) {
       let keyCode = event.key;
       document.getElementById("img").src = require("./" + Q[Q_No] + ".png");
-      if (Q_i === 0) {
+      if (Q_l === Q_l - Q_i) {
         //document.getElementById("img").src = Q[Q_No] + ".png";
 
         document.getElementById("start").innerHTML = Q[Q_No].substring(
           Q_i,
           Q_l
         );
-        var speak = new SpeechSynthesisUtterance();
-        speak.text = Q[Q_No];
-        speak.lang = "en-US";
-        speechSynthesis.speak(speak);
+        // var speak = new SpeechSynthesisUtterance();
+        // speak.text = Q[Q_No];
+        //speak.lang = "en-US";
+        //speechSynthesis.speak(speak);//
       }
 
       if (Q[Q_No].charAt(Q_i) === keyCode) {
@@ -44,7 +50,7 @@ const Typing = () => {
           Q_l
         );
 
-        if (Q_i === Q_l) {
+        if (Q_l - Q_i === 0) {
           new Audio(okAudio).play();
 
           Q_No = Math.floor(Math.random() * Q.length);
