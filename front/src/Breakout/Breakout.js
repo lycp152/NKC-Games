@@ -126,7 +126,10 @@ const Breakout = () => {
               ctx.fillStyle = "#A4C6FF";
               // 5行目
             } else if (c === 4) {
-              ctx.fillStyle = "white";
+              ctx.fillStyle = "b3d9ff";
+              //6行目
+            } else if (c === 5) {
+              ctx.fillStyle = "b3f2ff";
             }
             ctx.fill();
             ctx.closePath();
@@ -142,9 +145,15 @@ const Breakout = () => {
     function drawLives() {
       ctx.font = "16px Arial";
       ctx.fillStyle = "#0095DD";
-      ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
+      // ★ 自分で修正(ライフの表示を❤︎表示に修正) ★
+      if (lives === 3) {
+        ctx.fillText("❤︎❤︎❤︎", canvas.width - 85, 20);
+      } else if (lives === 2) {
+        ctx.fillText("❤︎❤︎", canvas.width - 85, 20);
+      } else if (lives === 1) {
+        ctx.fillText("❤︎", canvas.width - 85, 20);
+      }
     }
-
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       drawBricks();
