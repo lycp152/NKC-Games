@@ -5,7 +5,7 @@ import goodAudio from "./good.mp3";
 
 const Typing = () => {
   useEffect(() => {
-    let Q = [
+    const Q = [
       "apple",
       "banana",
       "melon",
@@ -22,14 +22,29 @@ const Typing = () => {
       "cheery",
       "watermelon",
     ];
-    let Q_No = Math.floor(Math.random() * Q.length);
 
+    let Q_No = -1;
     let Q_i = 0;
-    let Q_l = Q[Q_No].length;
+    let Q_l = 0;
+    let count = 0;
+    let isGameActive = false;
 
-    window.addEventListener("keydown", push_Keydown);
+    const timer = document.getElementById("timer");
+    let TIME = 20;
+
+    function countdown() {
+      TIME = Math.max(0, TIME - 1);
+      timer.textContent = "制限時間：" + TIME + "秒";
+      if (TIME <= 0) finish();
+    }
 
     function push_Keydown(event) {
+      if (!isGameActive) {
+        init();
+        isGameActive = true;
+        setInterval(countdown, 1000);
+      }
+
       let keyCode = event.key;
       document.getElementById("img").src = require("./" + Q[Q_No] + ".png");
       if (Q_l === Q_l - Q_i) {
@@ -54,22 +69,35 @@ const Typing = () => {
 
         if (Q_l - Q_i === 0) {
           new Audio(okAudio).play();
-
-          Q_No = Math.floor(Math.random() * Q.length);
-          Q_i = 0;
-          Q_l = Q[Q_No].length;
-
-          // document.getElementById("img").src = Q[Q_No] + ".png";
-          document.getElementById("img").src = require("./" + Q[Q_No] + ".png");
-          document.getElementById("start").innerHTML = Q[Q_No].substring(
-            Q_i,
-            Q_l
-          );
+          count++;
+          init();
         } else {
           new Audio(goodAudio).play();
         }
       }
     }
+
+    function finish() {
+      clearInterval(countdown);
+      document.getElementById("start").textContent =
+        "正解数は" + count + "個でした！";
+      isGameActive = false;
+    }
+
+    function init() {
+      Q_No = Math.floor(Math.random() * Q.length);
+      Q_i = 0;
+      Q_l = Q[Q_No].length;
+      document.getElementById("img").src = require("./" + Q[Q_No] + ".png");
+      document.getElementById("start").innerHTML = Q[Q_No].substring(Q_i, Q_l);
+    }
+
+    window.addEventListener("keydown", push_Keydown);
+
+    return () => {
+      clearInterval(countdown);
+      window.removeEventListener("keydown", push_Keydown);
+    };
   }, []);
 
   return (
@@ -81,6 +109,7 @@ const Typing = () => {
         <h1 id="start" className="text">
           何かキーを押して下さい
         </h1>
+        <p id="timer">制限時間：20秒</p>
       </center>
     </>
   );
