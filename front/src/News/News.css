@@ -1,7 +1,6 @@
 /*[News]のcssを記入*/
 
 .news-list {
-  /*background-color: aqua;*/
   list-style: none outside;
   margin: 0;
   padding: 10px;
@@ -18,15 +17,18 @@
   border-bottom: 1px solid #999;
 }
 
+/*  日付*/
 .date {
   color: #999;
   padding: 0px 5px;
 }
 
+/*  本文*/
 .news {
   margin: auto 10px;
 }
 
+/*  更新日*/
 .update {
   font-size: 14px;
   text-align: right;
