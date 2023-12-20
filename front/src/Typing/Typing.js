@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Typing.css";
 import okAudio from "./ok.mp3";
 import goodAudio from "./good.mp3";
@@ -28,6 +28,7 @@ const Typing = () => {
     let Q_l = 0;
     let count = 0;
     let isGameActive = false;
+    let countdownInterval; // カウントダウンのインターバルを格納する変数
 
     const timer = document.getElementById("timer");
     let TIME = 20;
@@ -42,22 +43,20 @@ const Typing = () => {
       if (!isGameActive) {
         init();
         isGameActive = true;
-        setInterval(countdown, 1000);
+        countdownInterval = setInterval(countdown, 1000);
+      }
+
+      if (isResultDisplayed()) {
+        return; // 結果画面が表示されている場合は処理を中断
       }
 
       let keyCode = event.key;
       document.getElementById("img").src = require("./" + Q[Q_No] + ".png");
       if (Q_l === Q_l - Q_i) {
-        //document.getElementById("img").src = Q[Q_No] + ".png";
-
         document.getElementById("start").innerHTML = Q[Q_No].substring(
           Q_i,
           Q_l
         );
-        // var speak = new SpeechSynthesisUtterance();
-        // speak.text = Q[Q_No];
-        //speak.lang = "en-US";
-        //speechSynthesis.speak(speak);//
       }
 
       if (Q[Q_No].charAt(Q_i) === keyCode) {
@@ -78,10 +77,28 @@ const Typing = () => {
     }
 
     function finish() {
-      clearInterval(countdown);
+      clearInterval(countdownInterval);
       document.getElementById("start").textContent =
         "正解数は" + count + "個でした！";
+      document.getElementById("timer").textContent = "enterを押してください。";
       isGameActive = false;
+
+      // Enterキーが押されたときに新しいラウンドを開始するイベントリスナーを追加
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
+    function handleKeyDown(event) {
+      if (event.key === "Enter") {
+        window.removeEventListener("keydown", handleKeyDown);
+        clearInterval(countdownInterval); // 既存のインターバルをクリア
+        init();
+        isGameActive = true;
+        TIME = 20;
+        countdownInterval = setInterval(countdown, 1000); // 新しいインターバルを設定
+        count = 0;
+      } else {
+        finish();
+      }
     }
 
     function init() {
@@ -92,11 +109,21 @@ const Typing = () => {
       document.getElementById("start").innerHTML = Q[Q_No].substring(Q_i, Q_l);
     }
 
+    function isResultDisplayed() {
+      // 結果が表示されているかどうかを確認
+      return (
+        !isGameActive &&
+        document.getElementById("start").textContent !==
+          "何かキーを押して下さい"
+      );
+    }
+
     window.addEventListener("keydown", push_Keydown);
 
     return () => {
-      clearInterval(countdown);
+      clearInterval(countdownInterval);
       window.removeEventListener("keydown", push_Keydown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
@@ -109,6 +136,7 @@ const Typing = () => {
         <h1 id="start" className="text">
           何かキーを押して下さい
         </h1>
+
         <p id="timer">制限時間：20秒</p>
       </center>
     </>
