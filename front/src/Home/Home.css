@@ -106,6 +106,10 @@ p.game-title {
   border-radius: 20px;
 }
 
+/*-------------------------------*/
+/* トップへ戻るボタン */
+/*-------------------------------*/
+
 .top-button {
   position: fixed;
   right: 10px;
