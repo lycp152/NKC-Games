@@ -1,0 +1,38 @@
+/*[News]のcssを記入*/
+
+.news-list {
+  list-style: none outside;
+  margin: 0;
+  padding: 10px;
+}
+
+.news-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  text-decoration: none;
+  width: 80%;
+  margin: 0 auto;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+
+/*  日付*/
+.date {
+  color: #999;
+  padding: 0px 5px;
+}
+
+/*  本文*/
+.news {
+  margin: auto 10px;
+}
+
+/*  更新日*/
+.update {
+  font-size: 14px;
+  text-align: right;
+  color: #999;
+  width: 80%;
+  margin: 0.5px auto 30px auto;
+}
