@@ -1,0 +1,140 @@
+/*------------------------------------------*/
+/*  webフォント*/
+/*------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300&display=swap");
+
+/*------------------------------------------*/
+/*  サイト全体のレイアウト*/
+/*------------------------------------------*/
+.layout {
+  max-width: 960px;
+  text-align: center;
+  margin: auto;
+  font-family: "Zen Maru Gothic", sans-serif;
+}
+
+/*------------------------------------------*/
+/*  ゲームメニュー*/
+/*------------------------------------------*/
+.menu {
+  display: flex;
+}
+
+.menu img {
+  width: 250px;
+  height: 150px;
+}
+
+.menu p {
+  margin: 0;
+}
+
+/*------------------------------------------*/
+/*  ゲームメニューコンテンツ*/
+/*------------------------------------------*/
+.game-left {
+  flex: 1;
+  background-color: aliceblue;
+  margin: 20px 10px 0px 40px;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.game-right {
+  flex: 1;
+  background-color: aliceblue;
+  margin: 20px 40px 0px 10px;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+p.game-title {
+  border-bottom: 1px solid black;
+  width: fit-content;
+  margin: auto;
+}
+
+/*------------------------------------------*/
+/*  見出し*/
+/*------------------------------------------*/
+.title {
+  position: relative;
+  display: inline-block;
+  width: 400px;
+  text-align: center;
+  color: #00acc1;
+}
+
+.title ::before,
+.title ::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 10%;
+  height: 3px;
+  border-top: 3px solid #00acc1;
+}
+
+.title ::before {
+  left: 10%;
+}
+
+.title ::after {
+  right: 10%;
+}
+
+.title h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.content {
+  width: 600px;
+  margin: 3em auto 1em;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.content p {
+  margin: 0;
+  padding: 0.5em 1em;
+  margin: 5px 0px;
+  text-align: left;
+  border: 5px solid aliceblue;
+  background-color: aliceblue;
+  border-radius: 20px;
+}
+
+.top-button {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 55px;
+  height: 55px;
+}
+
+/*------------------------------------*/
+/*  レスポンシブ*/
+/*------------------------------------*/
+@media screen and (max-width: 700px) {
+  .menu {
+    display: block;
+  }
+  .menu img {
+    width: 300px;
+    height: 200px;
+  }
+  .game-left {
+    width: 400px;
+    margin: 1.5em auto 10px auto;
+  }
+  .game-right {
+    width: 400px;
+    margin: 1.5em auto 10px auto;
+  }
+  .content {
+    width: 450px;
+    margin: 3em auto 0.5em;
+  }
+}
