@@ -217,8 +217,9 @@ const Breakout = () => {
 
   return (
     <>
-      <canvas id="myCanvas" width="600" height="500"></canvas>
-
+      <div className="rayout">
+        <canvas id="myCanvas" width="600" height="500"></canvas>
+      </div>
       {gameState === "start" && (
         <div className="btn-container">
           <button
