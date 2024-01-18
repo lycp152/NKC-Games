@@ -100,7 +100,6 @@ p.game-title {
 .content p {
   margin: 0;
   padding: 0.5em 1em;
-  margin: 5px 0px;
   text-align: left;
   border: 5px solid aliceblue;
   background-color: aliceblue;
@@ -113,6 +112,7 @@ p.game-title {
 
 .top-button {
   position: fixed;
+  color: transparent;
   right: 10px;
   bottom: 10px;
   width: 55px;

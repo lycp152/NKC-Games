@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./Typing.css";
-import okAudio from "./ok.mp3";
-import goodAudio from "./good.mp3";
+import okAudio from "./audio/ok.mp3";
+import goodAudio from "./audio/good.mp3";
 
 const Typing = () => {
   useEffect(() => {
@@ -51,7 +51,7 @@ const Typing = () => {
       }
 
       let keyCode = event.key;
-      document.getElementById("img").src = require("./" + Q[Q_No] + ".png");
+      document.getElementById("img").src = require("./img/" + Q[Q_No] + ".png");
       if (Q_l === Q_l - Q_i) {
         document.getElementById("start").innerHTML = Q[Q_No].substring(
           Q_i,
@@ -106,7 +106,7 @@ const Typing = () => {
       Q_No = Math.floor(Math.random() * Q.length);
       Q_i = 0;
       Q_l = Q[Q_No].length;
-      document.getElementById("img").src = require("./" + Q[Q_No] + ".png");
+      document.getElementById("img").src = require("./img/" + Q[Q_No] + ".png");
       document.getElementById("start").innerHTML = Q[Q_No].substring(Q_i, Q_l);
     }
 
