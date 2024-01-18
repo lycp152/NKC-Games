@@ -217,9 +217,9 @@ const Breakout = () => {
 
   return (
     <>
-      <h2>ブロック崩し</h2>
-      <canvas id="myCanvas" width="600" height="500"></canvas>
-
+      <div className="rayout">
+        <canvas id="myCanvas" width="600" height="500"></canvas>
+      </div>
       {gameState === "start" && (
         <div className="btn-container">
           <button
@@ -231,6 +231,12 @@ const Breakout = () => {
           </button>
         </div>
       )}
+      <div className="explanation">
+        <p>操作説明</p>
+        <p>----------------------------------------------------------------</p>
+        <p>矢印キーorマウス：移動</p>
+        <p>画面下のバーを左右に動かして、ブロックをすべて壊そう！</p>
+      </div>
     </>
   );
 };

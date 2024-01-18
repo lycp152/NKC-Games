@@ -52,6 +52,7 @@ p.game-title {
   border-bottom: 1px solid black;
   width: fit-content;
   margin: auto;
+  margin-top: 0.5em;
 }
 
 /*------------------------------------------*/
@@ -105,6 +106,10 @@ p.game-title {
   background-color: aliceblue;
   border-radius: 20px;
 }
+
+/*-------------------------------*/
+/* トップへ戻るボタン */
+/*-------------------------------*/
 
 .top-button {
   position: fixed;

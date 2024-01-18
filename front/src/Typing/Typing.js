@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./Typing.css";
 import okAudio from "./ok.mp3";
 import goodAudio from "./good.mp3";
@@ -80,7 +80,8 @@ const Typing = () => {
       clearInterval(countdownInterval);
       document.getElementById("start").textContent =
         "正解数は" + count + "個でした！";
-      document.getElementById("timer").textContent = "enterを押してください。";
+      document.getElementById("timer").textContent =
+        "enterを押してリトライできます";
       isGameActive = false;
 
       // Enterキーが押されたときに新しいラウンドを開始するイベントリスナーを追加
@@ -134,11 +135,17 @@ const Typing = () => {
           <img src="" id="img" alt="" />
         </p>
         <h1 id="start" className="text">
-          何かキーを押して下さい
+          キーを押してスタート！
         </h1>
 
         <p id="timer">制限時間：20秒</p>
       </center>
+      <div className="explanation">
+        <p>操作説明</p>
+        <p>---------------------------------------------------------------</p>
+        <p>特になし</p>
+        <p>画面に表示されたお題をキーボードで素早く入力しよう！</p>
+      </div>
     </>
   );
 };
