@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 // Route, Routerを使う場合は上に足す（個人メモ）
 import "./Home.css";
 
-//JavaScriptのコードはここに記入
-
 const returnTop = () => {
   window.scrollTo({
     top: 0,

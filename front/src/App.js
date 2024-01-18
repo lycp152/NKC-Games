@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Home from "./Home/Home";
-import Breakout from "./Breakout/Breakout";
-import Typing from "./Typing/Typing";
-import News from "./News/News";
+import Home from "../src/features/Home/Home";
+import Breakout from "../src/features/Breakout/Breakout";
+import Typing from "../src/features/Typing/Typing";
+import News from "../src/features/News/News";
 
 //ページ内リンク用ライブラリ
 import { HashLink } from "react-router-hash-link";
