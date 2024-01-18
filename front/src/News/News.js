@@ -15,27 +15,27 @@ const News = () => {
 
       <ul className="news-list">
         <div className="news-content">
-          <p className="date">2023.xx.xx</p>
+          <p className="date">2023.12.20</p>
           <p className="news">
             遊べるゲームに<Link to="/typing">タイピングゲーム</Link>
             を追加しました。
           </p>
         </div>
         <div className="news-content">
-          <p className="date">2023.xx.xx</p>
+          <p className="date">2023.12.01</p>
           <p className="news">
             遊べるゲームに<Link to="/breakout">ブロック崩し</Link>
             を追加しました。
           </p>
         </div>
         <div className="news-content">
-          <p className="date">2023.xx.xx</p>
+          <p className="date">2023.11.29</p>
           <p className="news">
             サイトを開設しました。（<Link to="/">NKC Games</Link>）
           </p>
         </div>
         <p className="update">
-          [最終更新] 2023.xx.xx
+          [最終更新] 2024.01.17
           <br />
         </p>
       </ul>

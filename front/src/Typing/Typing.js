@@ -80,7 +80,8 @@ const Typing = () => {
       clearInterval(countdownInterval);
       document.getElementById("start").textContent =
         "正解数は" + count + "個でした！";
-      document.getElementById("timer").textContent = "enterを押してください。";
+      document.getElementById("timer").textContent =
+        "enterを押してリトライできます";
       isGameActive = false;
 
       // Enterキーが押されたときに新しいラウンドを開始するイベントリスナーを追加
