@@ -12,6 +12,7 @@
   flex-wrap: nowrap;
   text-decoration: none;
   width: 80%;
+  height: 3em;
   margin: 0 auto;
   border-top: 1px solid #999;
   border-bottom: 1px solid #999;
@@ -21,6 +22,7 @@
 .date {
   color: #999;
   padding: 0px 5px;
+  margin: auto 0;
 }
 
 /*  本文*/
