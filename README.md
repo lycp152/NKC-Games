@@ -1,4 +1,4 @@
-# NKC-Games
+# NKC Games
 
 バッジ：（ここにバッジの内容を記入）
 
