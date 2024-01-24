@@ -1,4 +1,4 @@
-# GamePortal_gradproject
+# NKC-Games
 
 バッジ：（ここにバッジの内容を記入）
 
